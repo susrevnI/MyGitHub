@@ -1,0 +1,3 @@
+O projeto Git irá permitir ao aluno ...
+alteração do arquivo readme.txt
+nova alteração do arquivo
