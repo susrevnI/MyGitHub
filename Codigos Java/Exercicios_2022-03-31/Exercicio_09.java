@@ -6,25 +6,25 @@ public class Exercicio_B7 {
         Scanner entrada = new Scanner(System.in);
 
         System.out.print("Olá usuário, digite o valor a ser cobrado o imposto: ");
-        double valor = entrada.nextDouble();
+        float valor = entrada.nextFloat();
 
         System.out.print("Digite a sigla do estado: ");
         String estado = entrada.next();
 
-        double resultado = 0;
+        float resultado = 0;
 
         switch (estado) {
             case "MG":
-                resultado = valor * 1.07;
+                resultado = valor * 107 / 100;
                 break;
             case "SP":
-                resultado = valor * 1.12;
+                resultado = valor * 112 / 100;
                 break;
             case "RJ":
-                resultado = valor * 1.15;
+                resultado = valor * 115 / 100;
                 break;
             case "MS":
-                resultado = valor * 1.08;
+                resultado = valor * 108 / 100;
                 break;
         }
 
