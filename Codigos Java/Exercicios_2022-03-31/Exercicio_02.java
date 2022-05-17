@@ -1,30 +1,46 @@
 import java.util.Scanner;
 
-public class Exercicio_B14 {
-    
+public class Exercicio_02 {
+
     public static void main(String[] args) {
         Scanner entrada = new Scanner(System.in);
 
-        System.out.print("Olá usuário, digite o valor 'a' da equação do 2 gral: ");
-        double a = entrada.nextDouble();
+        System.out.print("Olá usuário, digite o primeiro número da operação: ");
+        double prim = entrada.nextDouble();
 
-        System.out.print("Digite o valor 'b': ");
-        double b = entrada.nextDouble();
+        System.out.print("Digite a operação (+, -, * ou /): ");
+        String operacao = entrada.next();
+        //char operacao = entrada.next().charAt(0);
 
-        System.out.print("Digite o valor 'c': ");
-        double c = entrada.nextDouble();
+        System.out.print("Digite o segundo número da operação: ");
+        double seg = entrada.nextDouble();
 
-        double delta = b*b - 4*a*c;
+        double resultado = 0;
+        
+        switch (operacao) {
+            case "+" : // ou case '+':
+                resultado = prim + seg;
+                break;
 
-        if (delta < 0) {
-            System.out.println("Delta menor que zero, não existe raiz.");
-        } else if (delta == 0) {
-            double x1 = -b / 2*a;
-            System.out.println("Delta igual a zero, raiz unica igual a " + x1);
+            case "-": // ou case '-':
+                resultado = prim - seg;
+                break;
+
+            case "*": // ou case '*':
+                resultado = prim * seg;
+                break;
+
+            case "/": // ou case '/':
+                if (seg != 0) {
+                    resultado = prim / 0;
+                }
+                break;
+        }
+
+        if (seg != 0){
+            System.out.println("O resultado da operação é " + resultado);
         } else {
-            double x1 = (-b + Math.sqrt(delta)) / 2*a;
-            double x2 = (-b - Math.sqrt(delta)) / 2*a;
-            System.out.println("Primeira raiz igual a " + x1 + ", segunda raiz igual a " + x2);
+            System.out.println("Não pode dividir por 0.");
         }
 
         entrada.close();

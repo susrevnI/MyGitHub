@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class Exercicio_A4 {
+public class Exercicio_04 {
 
     public static void main(String[] args) {
         Scanner entrada = new Scanner(System.in);
@@ -11,5 +11,7 @@ public class Exercicio_A4 {
         float veloctMs = veloctKm / (float)3.6;
 
         System.out.println("A conversão foi de " + veloctMs + " m/s");
+
+        entrada.close();
     }
 }

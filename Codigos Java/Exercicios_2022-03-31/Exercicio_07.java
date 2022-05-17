@@ -1,22 +1,35 @@
 import java.util.Scanner;
 
-public class Exercicio_B5 {
+public class Exercicio_07 {
     
     public static void main(String[] args) {
         Scanner entrada = new Scanner(System.in);
 
-        System.out.print("Olá usuário, digite um número positivo: ");
-        double numero = entrada.nextDouble();
+        System.out.print("Olá usuário, digite o valor a ser cobrado o imposto: ");
+        float valor = entrada.nextFloat();
 
-        if (numero < 0) {
-            System.out.println("O número digitado é negativo, por favor digite outro numero.");
-        } else {
-            double quadrado = numero * numero;
-            double raiz = Math.sqrt(numero);
+        System.out.print("Digite a sigla do estado: ");
+        String estado = entrada.next();
 
-            System.out.println("O numero ao quadrado é " + quadrado + " e a raiz quadrada é " + raiz);
+        float resultado = 0;
+
+        switch (estado) {
+            case "MG":
+                resultado = valor * 107 / 100;
+                break;
+            case "SP":
+                resultado = valor * 112 / 100;
+                break;
+            case "RJ":
+                resultado = valor * 115 / 100;
+                break;
+            case "MS":
+                resultado = valor * 108 / 100;
+                break;
         }
 
+        System.out.println("O valor com o inposto resulta em R$" + resultado);
+        
         entrada.close();
     }
 }

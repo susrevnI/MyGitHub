@@ -1,60 +1,56 @@
 import java.util.Scanner;
 
-public class Exercicio_B9 {
+public class Exercicio_11 {
     
     public static void main(String[] args) {
         Scanner entrada = new Scanner(System.in);
 
-        System.out.print("Olá usuário digite a sua altura: ");
-        float altura = entrada.nextFloat();
+        System.out.print("Olá usuário, digite o número do mês que procura: ");
+        int nuMes = entrada.nextInt();
 
-        System.out.print("Digite o seu peso: ");
-        float peso = entrada.nextFloat();
+        String mes = "";
 
-        String resultado = "";
-
-        // ALTURA ABAIXO DE 1,20
-        if (altura < 1.2) {
-
-            if (peso <= 60) {
-                resultado = "A";
-
-            } else if (peso <= 90) {
-                resultado = "D";
-
-            } else {
-                resultado = "G";
-            }
-
-        // ALTURA ENTRE 1,20 E 1,70
-        } else if (altura <= 1.7) {
-
-            if (peso <= 60) {
-                resultado = "B";
-
-            } else if (peso <= 90) {
-                resultado = "E";
-
-            } else {
-                resultado = "H";
-            }
-
-        // ALTURA ACIMA DE 1,70
-        } else {
-
-            if (peso <= 60) {
-                resultado = "C";
-
-            } else if (peso <= 90) {
-                resultado = "F";
-
-            } else {
-                resultado = "I";
-            }
+        switch (nuMes) {
+            case 1:
+                mes = "Janeiro";
+                break;
+            case 2:
+                mes = "Fevereiro";
+                break;
+            case 3:
+                mes = "Março";
+                break;
+            case 4:
+                mes = "Abril";
+                break;
+            case 5:
+                mes = "Maio";
+                break;
+            case 6:
+                mes = "Junho";
+                break;
+            case 7:
+                mes = "Julho";
+                break;
+            case 8:
+                mes = "Agosto";
+                break;
+            case 9:
+                mes = "Setembro";
+                break;
+            case 10:
+                mes = "Outubro";
+                break;
+            case 11:
+                mes = "Novembro";
+                break;
+            case 12:
+                mes = "Dezembro";
+                break;
         }
 
-        System.out.println("Voce esta no grupo " + resultado);
-        
+        System.out.println("O mês é " + mes);
+
         entrada.close();
     }
 }

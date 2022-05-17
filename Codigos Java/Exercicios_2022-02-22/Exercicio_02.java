@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class Exercicio_A2 {
+public class Exercicio_02 {
     public static void main(String[] args) {
         Scanner entrada = new Scanner(System.in);
 
@@ -17,5 +17,6 @@ public class Exercicio_A2 {
 
         System.out.println("A soma dos numeros inteiros é " + soma);
         
+        entrada.close();
     }
 }

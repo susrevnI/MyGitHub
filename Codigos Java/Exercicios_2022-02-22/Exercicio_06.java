@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class Exercicio_A6 {
+public class Exercicio_06 {
 
     public static void main(String[] args) {
         Scanner entrada = new Scanner(System.in);
@@ -11,5 +11,7 @@ public class Exercicio_A6 {
         float tempFah = tempCel * 9/5 + 32;
 
         System.out.println("A temperatura em graus Fahrenheit é " + tempFah);
+
+        entrada.close();
     }
 }

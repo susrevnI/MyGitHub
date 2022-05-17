@@ -1,26 +1,39 @@
 import java.util.Scanner;
 
-public class Exercicio_B8 {
+public class Exercicio_10 {
     
     public static void main(String[] args) {
         Scanner entrada = new Scanner(System.in);
 
-        System.out.print("Olá usuário, digite a idade do nadador: ");
-        int idade = entrada.nextInt();
+        System.out.print("Olá usuário, digite o número x: ");
+        int x = entrada.nextInt();
 
-        if (idade < 5) {
-            System.out.println("Muito novo para a clasificação.");
-        } else if (idade <= 7) {
-            System.out.println("Nadador Infantil A");
-        } else if (idade <= 10) {
-            System.out.println("Nadador Infantil B");
-        } else if (idade <= 13) {
-            System.out.println("Nadador Juvenil A");
-        } else if (idade <= 17) {
-            System.out.println("Nadador Juvenil B");
-        } else {
-            System.out.println("Nadador Sênior");
+        System.out.print("Digite o número y: ");
+        int y = entrada.nextInt();
+
+        System.out.print("Digite o número z: ");
+        int z = entrada.nextInt();
+
+        System.out.print("Digite o número corespondente a um dos calculos (1, 2 ou 3): ");
+        int calculo = entrada.nextInt();
+
+        int resultado = 0;
+
+        switch (calculo) {
+            case 1:
+                resultado = x*y*z;
+                break;
+            
+            case 2:
+                resultado = x+2*y+3*z*6;
+                break;
+            
+            case 3:
+                resultado = x+y+z*3;
+                break;
         }
+
+        System.out.println("O resultado da operação foi " + resultado);
 
         entrada.close();
     }

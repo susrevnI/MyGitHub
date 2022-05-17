@@ -1,4 +1,4 @@
-public class Exercicio_A7 {
+public class Exercicio_07 {
 
     public static void main(String[] args) {
         int primeiro = 780000 / 100 * 46;

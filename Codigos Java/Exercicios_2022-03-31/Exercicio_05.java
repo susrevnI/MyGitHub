@@ -1,22 +1,20 @@
 import java.util.Scanner;
 
-public class Exercicio_B3 {
+public class Exercicio_05 {
     
     public static void main(String[] args) {
         Scanner entrada = new Scanner(System.in);
 
-        System.out.print("Olá usuário, digite o primeiro número: ");
-        double prim = entrada.nextDouble();
+        System.out.print("Olá usuário, digite um número positivo: ");
+        double numero = entrada.nextDouble();
 
-        System.out.print("Digite o segundo número: ");
-        double seg = entrada.nextDouble();
-
-        if (prim > seg) {
-            System.out.println("O primeiro número é maior.");
-        } else if (seg > prim) {
-            System.out.println("O segundo número é maior.");
+        if (numero < 0) {
+            System.out.println("O número digitado é negativo, por favor digite outro numero.");
         } else {
-            System.out.println("Os dois numeros são iguais.");
+            double quadrado = numero * numero;
+            double raiz = Math.sqrt(numero);
+
+            System.out.println("O numero ao quadrado é " + quadrado + " e a raiz quadrada é " + raiz);
         }
 
         entrada.close();

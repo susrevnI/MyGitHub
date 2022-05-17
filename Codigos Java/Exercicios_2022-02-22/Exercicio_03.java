@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class Exercicio_A3 {
+public class Exercicio_03 {
 
     public static void main(String[] args) {
         Scanner entrada = new Scanner(System.in);
@@ -14,5 +14,7 @@ public class Exercicio_A3 {
         int nasc = ano - idade;
 
         System.out.println("Seu ano de nascimento é " + nasc);
+
+        entrada.close();
     }
 }

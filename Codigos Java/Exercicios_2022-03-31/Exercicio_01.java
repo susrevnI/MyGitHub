@@ -1,20 +1,31 @@
 import java.util.Scanner;
 
-public class Exercicio_B13 {
-    
+public class Exercicio_01 {
+
     public static void main(String[] args) {
         Scanner entrada = new Scanner(System.in);
 
-        System.out.print("Olá usuário, digite um número inteiro para verificar se ele é divisivel por 3 ou 5: ");
-        int num = entrada.nextInt();
+        System.out.print("Olá usuário, digite o nome do produto: ");
+        String nome = entrada.next();
+        
+        System.out.print("Digite o modelo do produto: ");
+        String modelo = entrada.next();
 
-        if (num %3 == 0 && num %5 == 0) {
-            System.out.println("O número é divisivel por 3 e por 5.");
-        } else if (num %3 == 0 || num %5 == 0) {
-            System.out.println("O número é divisiel por 3 ou por 5.");
-        } else {
-            System.out.println("O número não é divisivel por 3 nem por 5.");
-        }
+        System.out.print("Digite o tamanho do produto: ");
+        float tamanho = entrada.nextFloat();
+
+        System.out.print("Digite o preço do produto: ");
+        double preco = entrada.nextDouble();
+
+        System.out.print("Digite a quantidade do produto: ");
+        int quant = entrada.nextInt();
+
+        System.out.println("\nA tabela do seu produto ficou assim:\n");
+        System.out.println("Nome: " + nome);
+        System.out.println("Modelo: " + modelo);
+        System.out.println("Tamanho: " + tamanho);
+        System.out.println("Preço: R$" + preco);
+        System.out.println("Quantidade: " + quant + " unidades");
 
         entrada.close();
     }

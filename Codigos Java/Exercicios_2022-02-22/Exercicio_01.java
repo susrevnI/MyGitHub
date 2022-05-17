@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class Exercicio_A1 {
+public class Exercicio_01 {
     public static void main(String[] args) {
         Scanner entrada = new Scanner(System.in);
 
@@ -12,5 +12,6 @@ public class Exercicio_A1 {
 
         System.out.println("O antecessor de " + num + " é " + Ant + " e o sucessor é " + Suc);
         
+        entrada.close();
     }
 }

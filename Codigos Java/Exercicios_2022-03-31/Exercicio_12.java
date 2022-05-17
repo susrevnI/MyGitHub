@@ -1,39 +1,40 @@
 import java.util.Scanner;
 
-public class Exercicio_B10 {
+public class Exercicio_12 {
     
     public static void main(String[] args) {
         Scanner entrada = new Scanner(System.in);
 
-        System.out.print("Olá usuário, digite o número x: ");
-        int x = entrada.nextInt();
+        System.out.print("Olá usuário, digite o número do dia que quer encontrar: ");
+        int numDia = entrada.nextInt();
 
-        System.out.print("Digite o número y: ");
-        int y = entrada.nextInt();
+        String dia = "";
 
-        System.out.print("Digite o número z: ");
-        int z = entrada.nextInt();
-
-        System.out.print("Digite o número corespondente a um dos calculos (1, 2 ou 3): ");
-        int calculo = entrada.nextInt();
-
-        int resultado = 0;
-
-        switch (calculo) {
+        switch (numDia) {
             case 1:
-                resultado = x*y*z;
+                dia = "Domingo";
                 break;
-            
             case 2:
-                resultado = x+2*y+3*z*6;
+                dia = "Segunda-feira";
                 break;
-            
             case 3:
-                resultado = x+y+z*3;
+                dia = "Terça-feira";
+                break;
+            case 4:
+                dia = "Quarta-feira";
+                break;
+            case 5:
+                dia = "Quinta-feira";
+                break;
+            case 6:
+                dia = "Sexta-feira";
+                break;
+            case 7:
+                dia = "Sabado";
                 break;
         }
 
-        System.out.println("O resultado da operação foi " + resultado);
+        System.out.println("O dai da semana é " + dia);
 
         entrada.close();
     }
