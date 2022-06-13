@@ -6,11 +6,11 @@ import src.br.edu.iftm.rpgjava.classes.Mago;
 
 public class Escolhe {
 
-    Guerreiro g = new Guerreiro("", 30, 30, 30, 30,
+    src.br.edu.iftm.rpgjava.classes.Guerreiro g = new src.br.edu.iftm.rpgjava.classes.Guerreiro("", 30, 30, 30, 30,
             30, 30, 30, 30, 30, 30);
-    Arqueiro a = new Arqueiro("", 30, 30, 30, 30,
+    src.br.edu.iftm.rpgjava.classes.Arqueiro a = new src.br.edu.iftm.rpgjava.classes.Arqueiro("", 30, 30, 30, 30,
             30, 30, 30, 30, 30, 30);
-    Mago m = new Mago("", 30, 30, 30, 30,
+    src.br.edu.iftm.rpgjava.classes.Mago m = new src.br.edu.iftm.rpgjava.classes.Mago("", 30, 30, 30, 30,
             30, 30, 30, 30, 30, 30);
 
     String jogar1;

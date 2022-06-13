@@ -1,4 +1,4 @@
-package src.br.edu.iftm.rpgjava.classes;
+package br.edu.iftm.rpgjava.classes;
 
 public class Guerreiro {
 

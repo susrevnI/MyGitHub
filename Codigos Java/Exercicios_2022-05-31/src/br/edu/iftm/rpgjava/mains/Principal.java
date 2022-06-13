@@ -1,9 +1,14 @@
-package src.br.edu.iftm.rpgjava.main;
+package br.edu.iftm.rpgjava.mains;
+
+import br.edu.iftm.rpgjava.classes.Arqueiro;
+import br.edu.iftm.rpgjava.classes.Guerreiro;
+import br.edu.iftm.rpgjava.classes.Mago;
 
 import java.util.Random;
-import java.util.Scanner;
 
-import src.br.edu.iftm.rpgjava.classes.*;
+//import src.br.edu.iftm.rpgjava.classes.Arqueiro;
+//import src.br.edu.iftm.rpgjava.classes.Guerreiro;
+//import src.br.edu.iftm.rpgjava.classes.Mago;
 
 public class Principal {
 
@@ -12,13 +17,13 @@ public class Principal {
         Guerreiro g = new Guerreiro("Vladimir", 80, 50, 30, -3, 0,
                 80, 100, 90, 10, 63); //metodo construtor
 
-//        Armadura armadura = new Armadura("nome", 10, 40, 50);
-//        Arma arma = new Arma("nome", 20, 35);
+//        src.br.edu.iftm.rpgjava.classes.Armadura armadura = new src.br.edu.iftm.rpgjava.classes.Armadura("nome", 10, 40, 50);
+//        src.br.edu.iftm.rpgjava.classes.Arma arma = new src.br.edu.iftm.rpgjava.classes.Arma("nome", 20, 35);
 
         System.out.println(g.getNome());
 
 
-        //Objeto br.edu.iftm.rpgjava.classes.Guerreiro
+        //Objeto br.edu.iftm.rpgjava.classes.src.br.edu.iftm.rpgjava.classes.Guerreiro
         /*g.setNome("Vladimir");
         g.setForca(80);
         g.setAgilidade(30);
@@ -48,7 +53,7 @@ public class Principal {
         Arqueiro a = new Arqueiro("Jhoson", 0, 90, 0, 60, 0,
                 30, 75, 0, 5, 60);
         a.setCarisma(20);
-        //Objeto br.edu.iftm.rpgjava.classes.Arqueiro
+        //Objeto br.edu.iftm.rpgjava.classes.src.br.edu.iftm.rpgjava.classes.Arqueiro
         /*a.nome = "Jhoson";
         a.destreza = 90;
         a.resistencia = 30;
@@ -88,7 +93,7 @@ public class Principal {
         } else if (m.getVida() <= 0) {
             System.out.println("Gerreiro " + g.getNome() + " foi campeão!!!");
         } else if (g.getVida() <= 0) {
-            System.out.println("Mago " + m.getNome() + " foi campeão!!!");
+            System.out.println("src.br.edu.iftm.rpgjava.classes.Mago " + m.getNome() + " foi campeão!!!");
         }
 
     }

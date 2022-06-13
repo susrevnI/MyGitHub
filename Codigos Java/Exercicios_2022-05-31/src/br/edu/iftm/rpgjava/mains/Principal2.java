@@ -1,6 +1,6 @@
-package src.br.edu.iftm.rpgjava.main;
+package br.edu.iftm.rpgjava.mains;
 
-import src.br.edu.iftm.rpgjava.classes.*;
+import br.edu.iftm.rpgjava.classes.*;
 
 import java.util.Random;
 import java.util.Scanner;
@@ -32,11 +32,11 @@ public class Principal2 {
             System.out.println("");
 
             if (g.getVida() > 0) {
-                //   ---------Guerreiro----------
+                //   ---------src.br.edu.iftm.rpgjava.classes.Guerreiro----------
                 vg = 1;
                 int valorDado = dado.nextInt(6);
                 System.out.println("Valor do dado: " + valorDado);
-                System.out.print("Guerreiro, qual oponente quer atacar? ");
+                System.out.print("src.br.edu.iftm.rpgjava.classes.Guerreiro, qual oponente quer atacar? ");
                 char ataque = ent.next().charAt(0);
 
                 if (ataque == 'm' && m.getVida() > 0) {
@@ -55,11 +55,11 @@ public class Principal2 {
             }
 
             if (a.getVida() > 0) {
-                //   ---------Arqueiro----------
+                //   ---------src.br.edu.iftm.rpgjava.classes.Arqueiro----------
                 va = 1;
                 int valorDado = dado.nextInt(6);
                 System.out.println("Valor do dado: " + valorDado);
-                System.out.print("Arqueiro, qual oponente quer atacar? ");
+                System.out.print("src.br.edu.iftm.rpgjava.classes.Arqueiro, qual oponente quer atacar? ");
                 char ataque = ent.next().charAt(0);
 
                 if (ataque == 'm' && m.getVida() > 0) {
@@ -78,11 +78,11 @@ public class Principal2 {
             }
 
             if (m.getVida() > 0) {
-                //   ---------Mago----------
+                //   ---------src.br.edu.iftm.rpgjava.classes.Mago----------
                 vm = 1;
                 int valorDado = dado.nextInt(6);
                 System.out.println("Valor do dado: " + valorDado);
-                System.out.print("Mago, qual oponente quer atacar? ");
+                System.out.print("src.br.edu.iftm.rpgjava.classes.Mago, qual oponente quer atacar? ");
                 char ataque = ent.next().charAt(0);
 
                 if (ataque == 'g' && m.getVida() > 0) {
@@ -100,9 +100,9 @@ public class Principal2 {
                 vm = 0;
             }
 
-            System.out.println("Vida Guerreiro: " + g.getVida());
-            System.out.println("Vida Arqueiro: " + a.getVida());
-            System.out.println("Vida Mago: " + m.getVida());
+            System.out.println("Vida src.br.edu.iftm.rpgjava.classes.Guerreiro: " + g.getVida());
+            System.out.println("Vida src.br.edu.iftm.rpgjava.classes.Arqueiro: " + a.getVida());
+            System.out.println("Vida src.br.edu.iftm.rpgjava.classes.Mago: " + m.getVida());
             System.out.println("");
             System.out.println(" --- Fim round " + round + " ---");
             System.out.println("");
@@ -115,9 +115,9 @@ public class Principal2 {
         if (vg > 0) {
             System.out.println("Gerreiro " + g.getNome() + " foi campeão!!!");
         } else if (vm > 0) {
-            System.out.println("Mago " + m.getNome() + " foi campeão!!!");
+            System.out.println("src.br.edu.iftm.rpgjava.classes.Mago " + m.getNome() + " foi campeão!!!");
         } else if (va > 0){
-            System.out.println("Arqueiro " + a.getNome() + " foi campeão!!!");
+            System.out.println("src.br.edu.iftm.rpgjava.classes.Arqueiro " + a.getNome() + " foi campeão!!!");
         }
 
     }
