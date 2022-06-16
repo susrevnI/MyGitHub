@@ -1,12 +1,12 @@
 package classes;
 
-public class Classe_exerc03_A {
+public class Classe_exerc03 {
 
-    public void fatoriar(double num) {
+    public void fatoriar(int num) {
         System.out.print("Os fatorias do número " + num + " é: ");
-        double result = num;
+        int result = num;
 
-        for (int i = 2; i < num / 2; ) {
+        for (int i = 2; i <= num; ) {
             if (result % i == 0) {
                 result /= i;
                 if (result != 1) {

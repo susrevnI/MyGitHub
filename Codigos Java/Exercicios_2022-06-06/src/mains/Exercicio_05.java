@@ -20,6 +20,7 @@ public class Exercicio_05 {
         Scanner ent = new Scanner(System.in);
         boolean sair = false;
         int comando;
+//        Classe_exerc05_B newContact;
 
         System.out.println("\n--- Lista eletronica ---");
 
@@ -34,25 +35,27 @@ public class Exercicio_05 {
                     2 - buscar contato;
                     3 - remover contato;
                     4 - editar contato;
-                    5 -  sair\n""");
+                    5 -  sair.
+                    """);
 
             System.out.print("Proximo comando: ");
             comando = ent.nextInt();
 
-            if (comando == 1) {
-                System.out.print("\n- Novo contato -\n   Nome: ");
-                nome = ent.next();
-                nome = nome + space;
-                System.out.print("   Numero: ");
-                numero = ent.next();
-                numero = numero + space;
+            switch (comando) {
+                case 1:
+                    System.out.print("\n- Novo contato -\n   Nome: ");
+                    nome = ent.next();
+                    System.out.print("   Numero: ");
+                    numero = ent.next();
 
-                lista.listar(nome, numero);
+                    lista.listar(nome, numero);
+                    break;
+                case 2:
             }
 
         } while (comando != 5);
 
-        System.out.println(lista.getLista(1));
+        lista.getLista();
 
         ent.close();
     }
