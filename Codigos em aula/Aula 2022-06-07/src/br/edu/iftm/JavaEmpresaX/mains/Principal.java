@@ -4,7 +4,6 @@ import br.edu.iftm.JavaEmpresaX.classes.Departamento;
 import br.edu.iftm.JavaEmpresaX.classes.Empregado;
 import br.edu.iftm.JavaEmpresaX.classes.Projeto;
 
-import javax.sound.midi.Soundbank;
 import java.util.Date;
 import java.util.Scanner;
 
@@ -33,15 +32,10 @@ public class Principal {
         Projeto[] vetorDeProjetos = new Projeto[5];
         Empregado[] vetorDeEmpregados = new Empregado[10];
         Departamento[] vetorDeDepartamento = new Departamento[5];
-        Projeto p;
-        Empregado e;
-        Departamento d;
         int countProjetos = 0;
         int countDepartamentos = 0;
         int countEmpregados = 0;
-        int cadastrar = 0;
-
-        Date data = new Date();
+        int cadastrar;
 
         int opcao = 0;
         do {
@@ -50,6 +44,7 @@ public class Principal {
                     1 - Projeto
                     2 - Empregado
                     3 - Departamento
+                    0 - Encerrar o programa
                     """);
             System.out.print("O que deseja visualizar: ");
             cadastrar = teclado.nextInt();
@@ -63,7 +58,7 @@ public class Principal {
                             Menu
                             1 - Cadastrar Projetos
                             2 - Imprimir Todos os Projetos
-                            0 - Sair
+                            3 - Procurar projeto por codigo
                             """);
                     System.out.print("Digite uma opção:");
                     opcao = teclado.nextInt();
@@ -109,7 +104,6 @@ public class Principal {
                             Menu
                             1 - Cadastrar Empregado
                             2 - Imprimir Todos os Empregados
-                            0 - Sair
                             """);
                     System.out.print("Digite uma opção:");
                     opcao = teclado.nextInt();
@@ -154,7 +148,6 @@ public class Principal {
                             Menu
                             1 - Cadastrar Departamento
                             2 - Imprimir Todos os Departamento
-                            0 - Sair
                             """);
                     System.out.print("Digite uma opção:");
                     opcao = teclado.nextInt();

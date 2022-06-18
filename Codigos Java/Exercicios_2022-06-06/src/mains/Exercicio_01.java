@@ -4,11 +4,15 @@ senão  imprima “Você digitou um número fora da faixa”. */
 
 package mains;
 
+import classes.Classe_exerc01;
+
 import java.util.Scanner;
 
 public class Exercicio_01 {
     public static void main(String[] args) {
         Scanner ent = new Scanner(System.in);
+
+        Classe_exerc01 func = new Classe_exerc01();
 
         /*boolean s;
         do {
@@ -33,11 +37,7 @@ public class Exercicio_01 {
             num = ent.nextDouble();
         }
 
-        if (num >= 100 && num <= 200) {
-            System.out.println("Você digitou um número entre 100 e 200");
-        } else {
-            System.out.println("Você digitou um número fora da faixa");
-        }
+        func.entre(num);
 
         ent.close();
     }

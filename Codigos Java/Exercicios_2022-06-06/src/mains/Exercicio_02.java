@@ -3,11 +3,15 @@ deverá imprimir “Número par” caso contrário, “Número ímpar”. */
 
 package mains;
 
+import classes.Classe_exerc02;
+
 import java.util.Scanner;
 
 public class Exercicio_02 {
     public static void main(String[] args) {
         Scanner ent = new Scanner(System.in);
+
+        Classe_exerc02 func = new Classe_exerc02();
 
         System.out.print("Olá usuário, escolha um número entre 0 e 100: ");
         double num = ent.nextDouble();
@@ -21,11 +25,7 @@ public class Exercicio_02 {
             num = ent.nextDouble();
         }
 
-        if (num % 2 == 0) {
-            System.out.println("Esse número é Par!");
-        } else {
-            System.out.println("Esse número é Impar!");
-        }
+        func.imParPar(num);
 
         ent.close();
     }

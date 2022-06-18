@@ -1,61 +1,108 @@
 package classes;
 
-import java.util.Arrays;
-
 public class Classe_exerc05_A {
-    public String[] lista = new String[10];
+    private Classe_exerc05_B[] lista = new Classe_exerc05_B[20];
+
+    public int tamanhoLista(){return lista.length;}
+
+    public Classe_exerc05_B poscEsp(int posicao){return lista[posicao-1];}
+
+    public boolean cheioTF() {
+        boolean cheia = true;
+        for (Classe_exerc05_B classe_exerc05_b : lista) {
+            cheia = classe_exerc05_b != null;
+        }
+        return cheia;
+    }
 
     public void listar(String nome, String numero) {
-        //int i = 0;
-        //boolean ok = true;
-        //String cheio = lista[i];
+        boolean repetido = false;
+        Classe_exerc05_B contato = new Classe_exerc05_B(nome, numero);
 
-        for (int i = 0; i < lista.length; i++) {
-            if (lista[i] == null) {
-                lista[i] = String.valueOf(new Classe_exerc05_B(nome, numero));
-                i = lista.length;
-            } else if (i == lista.length - 1) {
-                System.out.println("Agenda cheia.");
-            }
+        for (Classe_exerc05_B i : lista) {
+            repetido = i == contato;
         }
 
-        /*while (cheio != null) {
-            i++;
-            cheio = lista[i];
-            if (i > 19) {
-                ok = false;
+        if (!repetido) {
+            for (int i = 0; i < lista.length; i++) {
+                if (lista[i] == null) {
+                    lista[i] = contato;
+                    System.out.println("\nContato adicionado.");
+                    i = lista.length;
+                }
             }
-        }
-
-        if (ok) {
-            lista[i] = "Posição = " + (i + 1) + newContact;
         } else {
-            System.out.println("Agenda cheia");
-        }*/
+            System.out.println("\nContato já existente.");
+        }
     }
 
-    public String[] getLista() {
-        return lista;
+    public void buscarPosc(int posicao) {
+        if (lista[posicao - 1] != null) {
+            System.out.printf("\nContato [%d] = %s\n", posicao, lista[posicao - 1].toString());
+        } else {
+            System.out.println("\nNão há nenhum contato nesta posição.");
+        }
     }
 
-    public void todosContatos() {
-        for (String s : lista) {
-            if (s != null) {
-                System.out.println(s);
+    public void buscarNome(String nome) {
+        int repeticoes = 0;
+        System.out.println();
+        for (Classe_exerc05_B nomes : lista) {
+            if (nomes != null && nomes.getNome().contains(nome)) {
+                System.out.println(nomes);
+                repeticoes++;
             }
         }
-
-        /*for (int i = 0; i < lista.length; i++) {
-            if (lista[i] != null){
-                System.out.println(lista[i]);
-            }
-        }*/
+        if (repeticoes == 0) {
+            System.out.println("Não há ninguem com esse nome.");
+        } else {
+            System.out.printf("\n%d nome(s) parecido(s) encontrado(s).\n", repeticoes);
+        }
     }
 
-    @Override
-    public String toString() {
-        return "Contatos {" +
-                "lista = " + Arrays.toString(lista) +
-                '}';
+    public void buscarNum(String numero) {
+        int repeticoes = 0;
+        System.out.println();
+        for (Classe_exerc05_B numeros : lista) {
+            if (numeros != null && numeros.getNumero().contains(numero)) {
+                System.out.println(numeros);
+                repeticoes++;
+            }
+        }
+        if (repeticoes == 0) {
+            System.out.println("Não há ninguem com esse número.");
+        } else {
+            System.out.printf("\n%d número(s) parecido(s) encontrado(s).\n", repeticoes);
+        }
+    }
+
+    public void deletar(int posicao) {
+        if (lista[posicao - 1] != null) {
+            lista[posicao - 1] = null;
+            System.out.println("\nContato deletado.");
+        } else {
+            System.out.println("\nNão há nenhum contato nesta posição.");
+        }
+    }
+
+    public void editar(int posicao, String nome, String numero){
+        lista[posicao-1] = new Classe_exerc05_B(nome, numero);
+    }
+
+    public boolean todosContatos() {
+        int repeticoes = 0;
+        for (int i = 0; i < lista.length; i++) {
+            if (lista[i] != null) {
+                System.out.printf("\nContato [%d] = (%s)", i + 1, lista[i]);
+                repeticoes++;
+            }
+        }
+        if (repeticoes == 0) {
+            System.out.println("\nSem contatos na agenda.");
+            return false;
+        } else {
+            System.out.println();
+            return true;
+        }
     }
 }
