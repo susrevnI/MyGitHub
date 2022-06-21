@@ -40,7 +40,8 @@ public class Principal {
         int opcao = 0;
         do {
             System.out.println("""
-                                        
+                    
+                    Menu
                     1 - Projeto
                     2 - Empregado
                     3 - Departamento
@@ -54,8 +55,7 @@ public class Principal {
                 // ----------   Projeto ----------
                 case 1 -> {
                     System.out.println("""
-                                                        
-                            Menu
+                              
                             1 - Cadastrar Projetos
                             2 - Imprimir Todos os Projetos
                             3 - Procurar projeto por codigo
@@ -68,7 +68,8 @@ public class Principal {
                                 System.out.print("Digite o codigo do Projeto: ");
                                 int codigo = teclado.nextInt();
                                 System.out.print("digite o nome do projeto: ");
-                                String nome = teclado.next();
+                                teclado.nextLine();
+                                String nome = teclado.nextLine();
                                 vetorDeProjetos[countProjetos] = new Projeto(codigo, nome, null);
                                 countProjetos++;
                             } else {
@@ -100,8 +101,7 @@ public class Principal {
                 }
                 case 2 -> {
                     System.out.println("""
-                                                
-                            Menu
+                            
                             1 - Cadastrar Empregado
                             2 - Imprimir Todos os Empregados
                             """);
@@ -113,11 +113,12 @@ public class Principal {
                                 System.out.print("Digite o codigo do Empregado: ");
                                 int codigo = teclado.nextInt();
                                 System.out.print("Digite o nome do Empregado: ");
-                                String nome = teclado.next();
+                                teclado.nextLine();
+                                String nome = teclado.nextLine();
                                 //System.out.print("Digite o data de nascimento do Empregado: ");
                                 //Date dataNasc = teclado.next
                                 System.out.print("Digite o endereço do Empregado: ");
-                                String endereco = teclado.next();
+                                String endereco = teclado.nextLine();
                                 System.out.print("Digite o sexo do Empregado: ");
                                 char sexo = teclado.next().charAt(0);
                                 System.out.print("Digite o salario do Empregado: ");
@@ -144,8 +145,7 @@ public class Principal {
                 }
                 case 3 -> {
                     System.out.println("""
-                                                
-                            Menu
+                            
                             1 - Cadastrar Departamento
                             2 - Imprimir Todos os Departamento
                             """);
@@ -157,7 +157,8 @@ public class Principal {
                                 System.out.print("Digite o codigo do Departamento: ");
                                 int codigo = teclado.nextInt();
                                 System.out.print("Digite o nome do Departamento: ");
-                                String nome = teclado.next();
+                                teclado.nextLine();
+                                String nome = teclado.nextLine();
                                 System.out.print("Digite o codigo do departamento do Empregado: ");
                                 int codDepto = teclado.nextInt();
                                 vetorDeDepartamento[countDepartamentos] = new Departamento(codigo, nome, codDepto, new Date());
@@ -180,8 +181,6 @@ public class Principal {
 
         } while (opcao != 0);
 
-
+        teclado.close();
     }
-
 }
-
