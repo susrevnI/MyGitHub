@@ -26,6 +26,7 @@ public class Exercicio_08 {
                     Comandos:
                       '+' -> soma um no contador;
                       '-' -> subtrai um do contador;
+                      '*' -> zera o contador;
                       '0' -> encerra o programa.
                     """);
             System.out.print("Proximo comando: ");

@@ -14,8 +14,8 @@ public class Exercicio_03 {
         System.out.print("Olá usuário, escolha um número para fatoriar: ");
         double num = ent.nextDouble();
 
-        while (num != (int) num) {
-            System.out.println("Número decimais não são aceitos, escolha de novo: ");
+        while (num != (int) num || num < 0) {
+            System.out.println("Número decimais e negativos não são aceitos, escolha de novo: ");
             num = ent.nextDouble();
         }
 
