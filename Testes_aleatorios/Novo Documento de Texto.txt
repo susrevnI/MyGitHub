@@ -1,0 +1,11 @@
+Matemática:
+
+Existe multiplos de núneros decimais?
+Números positivos são multiplos de números negativos? Ex: 2 = -2 * -1;
+
+Lab. Prog:
+
+Criar classe lista e classe novo contato:
+	Contato tem as variaveis nome e numero;
+	Lista apenas coloca na lista e faz as funções;
+Usar o switch;

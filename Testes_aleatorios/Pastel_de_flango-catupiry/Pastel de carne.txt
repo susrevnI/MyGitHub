@@ -1,0 +1,31 @@
+------------------------Nosso codigo-----------------------
+
+1)
+   insert into empregado (codEmp, nome, dataNasc, endereco, sexo, salario, codSuperv, codDepto)
+   values (9, "Felipe Gabriel Bonato Araújo Oliveira",'2006-02-13', 'Rua Jõao Vieira do Carmo', 'M', 15000, 7, 5);
+
+   insert into empregado (codEmp, nome, dataNasc, endereco, sexo, salario, codSuperv, codDepto)
+   values (10, "Pedro Henrique Tomaz Romão",'2005-05-26', 'Rua Das Amoreiras', 'M', 15000, 9, 5);
+
+2)
+   insert into trabalhaem (codEmp, codProj, horas)
+   values (9, 30, 10);
+
+   insert into trabalhaem (codEmp, codProj, horas)
+   values (10, 30, 10);
+
+3)
+   select nome, dataNasc from empregado
+   where dataNasc < '1962-01-01';
+
+4)
+   select gerente from departamento;
+
+   select dependente.nome, dependente.dataNasc from dependente, empregado
+   where empregado.codEmp = dependente.codEmp and dependente.relacao = 'Filho' and empregado.codSuperv = 2;
+
+5)
+   select * from empregado; select * from projeto; select * from trabalhaem;
+
+   select empregado.nome from trabalhaem, empregado
+   where trabalhaem.codProj = 3 and empregado.codEmp = trabalhaem.codEmp

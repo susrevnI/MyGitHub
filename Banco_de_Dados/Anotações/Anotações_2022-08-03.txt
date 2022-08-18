@@ -1,0 +1,13 @@
+1 - '.format' pode ser usado apenas com um f no inicio e colocar as variaveis entre as chaves;
+
+2 - Retornar o nome das tabelas:
+	SELECT TABLE_NAME
+	FROM INFORMATION_SCHEMA.TABLES
+	WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_SCHEMA = 'northwind';
+
+3 - Retornar o nome das colunas de uma tabela:
+	SELECT column_name
+	FROM INFORMATION_SCHEMA.COLUMNS
+	WHERE TABLE_NAME = 'nome_coluna'
+	and table_schema = 'northwind';
+
