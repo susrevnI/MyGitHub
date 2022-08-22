@@ -1,5 +1,4 @@
 # Criar conexão com o Banco de dados
-from fileinput import close
 import mysql.connector
 
 mydb = mysql.connector.connect(
@@ -57,7 +56,7 @@ def imprimirLista(lista):
     i = 1
 
     for elemento in lista:
-        print(f'{i} - {elemento[0]}')
+        print(f"{i} - {elemento[0]}")
         i += 1
 
 # --------------------------------------------------------------////------------------------------------------------------------------------
@@ -73,7 +72,7 @@ Olá,
  
   1 - É obrigatorio escolher uma tabela para iniciar a busca.
   2 - Caso não seja especificado uma coluna será mostrado tudo de todas as colunas.
-  3 - caso não seja especificado uma consulta será mostrado tudo de todas as colunas.
+  3 - Caso não seja especificado uma consulta será mostrado tudo de todas as colunas.
   4 - Pesquisas em branco ou Enter's vazios serão tratados como escolha não especificada
         e entrara nos topicos 2 e 3.
   5 - Caso os resultado sejão muito grandes não será possivel mostrar tudo na tela de uma 
@@ -83,6 +82,10 @@ Olá,
 
 # Crinado cursor
 mycursor = mydb.cursor()
+
+
+# Variavel para ferificar se o programa deve continuar
+continuarProg = True
 
 
 # Buscando e armazenando as tabelas
@@ -171,8 +174,6 @@ colunaEsc = input("\nDigite o nome ou número de uma coluna para realizar uma bu
 
 colunaEsc = colunaEsc.strip()
 
-continuarProg = True
-
 
 # Verificando se fará busca por coluna
 if colunaEsc != '':
@@ -190,60 +191,72 @@ if colunaEsc != '':
             o = 1
             for elemento in listaColunas:
                 if k != o:
-                    select += elemento + ", "
+                    select += f"`{elemento}`, "
                     o += 1
                 else:
-                    select += elemento
+                    select += f"`{elemento}`"
 
         
         # Realizando e armazenando a busca com base na coluna se for escolhida
-        continuar = 's'
+        continuarCol = 's'
 
         while True:
 
+            # Verificar se o programa deve continuar
             if continuarProg == False:
                 break
 
-            if continuar == 's' or continuar == 'S':
+
+            # Verificar se deve continuar a procura por colunas
+            if continuarCol == 's' or continuarCol == 'S':
                 procura = input(f"\nDigite o/a '{colunaEsc}': ")
                 procura = procura.strip()
         
 
             # Caso tenha colunas expecificas
             if (mostrarColuna == 's' or mostrarColuna == 'S') and procura != '':
-                mycursor.execute(f"{select} from {tabelaEsc} where {colunaEsc} = '{procura}'")
+                mycursor.execute(f"{select} from `{tabelaEsc}` where `{colunaEsc}` = `{procura}`")
             elif mostrarColuna == 's' or mostrarColuna == 'S':
-                mycursor.execute(f"{select} from {tabelaEsc}")
+                mycursor.execute(f"{select} from `{tabelaEsc}`")
+
 
             #caso não tenha colunas expecificas
             elif procura != '':
-                mycursor.execute(f"select * from {tabelaEsc} where {colunaEsc} = '{procura}'")
+                mycursor.execute(f"select * from `{tabelaEsc}` where `{colunaEsc}` = `{procura}`")
             else:
-                mycursor.execute(f"select * from {tabelaEsc}")
+                mycursor.execute(f"select * from `{tabelaEsc}`")
 
             myresult = mycursor.fetchall()
 
+
+            # verificar resultados
             if len(myresult) != 0:
                 break
             else:
 
                 # Caso não tenha resultados e o usuário não queira mais fazer a busca por coluna
-                continuar = input("\nNenhum resultado encontrado. Deseja continuar a procura por coluna? (s/n): ")
-                while continuar != 'S' and continuar != 's' and continuar != 'n' and continuar != 'N':
-                    continuar = input("\nÉ necessario que digite 's' ou 'n': ")
-                if continuar == 'n' or continuar == 'N':
+                continuarCol = input("\nNenhum resultado encontrado. Deseja continuar a procura por coluna? (s/n): ")
+
+                while continuarCol != 'S' and continuarCol != 's' and continuarCol != 'n' and continuarCol != 'N':
+                    continuarCol = input("\nÉ necessario que digite 's' ou 'n': ")
+
+                if continuarCol == 'n' or continuarCol == 'N':
+
+                    # Verificar se o programa deve continuar
                     continuarProg = input("\nDeseja continuar o programa? (s/n): ")
                     while continuarProg != 'S' and continuarProg != 's' and continuarProg != 'n' and continuarProg != 'N':
                         continuarProg = input("\n necessario que digite 's' ou 'n': ")
+
+                    # Caso o programa não deva continuar
                     if continuarProg == 'n' or continuarProg == 'N':
                         continuarProg = False
                         break
                     procura = ''
 
-            
 
-
+# Verificar se o programa deve continuar
 if continuarProg:
+
     # Caso não realize busca por coluna
     if colunaEsc == '':
         mycursor.execute(f"select * from {tabelaEsc}")
@@ -253,13 +266,12 @@ if continuarProg:
     # Imprimindo os resultados na tela
     j = 1
 
-    if len(myresult) > 500:
-        input(f"\nFoi encontrado {len(myresult)} resultados. É resultado pra caral%@ vai com calma ai.")
-    elif len(myresult) > 50:
+    #if len(myresult) > 500:
+        #input(f"\nFoi encontrado {len(myresult)} resultados. É resultado pra caral%@ vai com calma ai.")
+    if len(myresult) > 50:
         input(f"\nFoi encontrado {len(myresult)} resultados. São muitos resultados, talvez alguns resultados de sua pesquisa não apareçam na tela.")
-    elif len(myresult) == 0:
-        print("\nNenhum resultado foi encontrado.")
-
+    else:
+        input(f"\nFoi encontrado {len(myresult)} resultados.")
 
     for elemento in myresult:
         i = 0
@@ -271,4 +283,7 @@ if continuarProg:
             input()
         j += 1
 
-print("\n\n ------- Fim do Programa -------")
+
+# Finalizando o programa com uma mensagem fofa (UwU)
+print("\n\n           ------- Fim do Programa ------- \n\n")
+print("Da total pls! (UwU)")

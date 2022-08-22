@@ -1,0 +1,3 @@
+1 - Atualizar o codigo no GitHub
+2 - Utilisar assento crase
+3 - Sair do programa na seleção de tabelas
