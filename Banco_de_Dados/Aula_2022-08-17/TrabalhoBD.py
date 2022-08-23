@@ -75,7 +75,12 @@ Olá,
   3 - Caso não seja especificado uma consulta será mostrado tudo de todas as colunas.
   4 - Pesquisas em branco ou Enter's vazios serão tratados como escolha não especificada
         e entrara nos topicos 2 e 3.
-  5 - Caso os resultado sejão muito grandes não será possivel mostrar tudo na tela de uma 
+  5 - Na busca de datas é necessario informar a data da seginte maneira:
+    5.1 - (AAAA-MM-DD) Ano, mês e dia separados por traço.
+    5.2 - No caso de busca apenas por ano, mês ou dia pode-se trocar o número da data pelo
+        simbolo de porcentagem (%) assim como no exemplo: '%-04-%', retorna todos os dados
+        do mês de Abril.
+  6 - Caso os resultado sejão muito grandes não será possivel mostrar tudo na tela de uma 
         só vez, será mostrado 50 a cada vez que precionar o botão Enter.
 """)
 
@@ -140,7 +145,7 @@ if mostrarColuna == 's' or mostrarColuna == 'S':
     listaColunas = list()
     
 
-    qualColuna = input("\nDigite o nome ou numero da coluna: ")
+    qualColuna = input("\nDigite o nome ou número da coluna: ")
     qualColuna.strip()
 
     while True:
@@ -165,7 +170,7 @@ if mostrarColuna == 's' or mostrarColuna == 'S':
             qualColuna = input("Coluna não encontrada, digite novamente: ")
             qualColuna.strip()
         else:
-            qualColuna = input("Digite o nome ou numero da proxima coluna: ")
+            qualColuna = input("Digite o nome ou número da proxima coluna: ")
             qualColuna.strip()
 
 
@@ -215,14 +220,14 @@ if colunaEsc != '':
 
             # Caso tenha colunas expecificas
             if (mostrarColuna == 's' or mostrarColuna == 'S') and procura != '':
-                mycursor.execute(f"{select} from `{tabelaEsc}` where `{colunaEsc}` = `{procura}`")
+                mycursor.execute(f"{select} from `{tabelaEsc}` where `{colunaEsc}` = '{procura}'")
             elif mostrarColuna == 's' or mostrarColuna == 'S':
                 mycursor.execute(f"{select} from `{tabelaEsc}`")
 
 
             #caso não tenha colunas expecificas
             elif procura != '':
-                mycursor.execute(f"select * from `{tabelaEsc}` where `{colunaEsc}` = `{procura}`")
+                mycursor.execute(f"select * from `{tabelaEsc}` where `{colunaEsc}` = '{procura}'")
             else:
                 mycursor.execute(f"select * from `{tabelaEsc}`")
 
@@ -245,7 +250,7 @@ if colunaEsc != '':
                     # Verificar se o programa deve continuar
                     continuarProg = input("\nDeseja continuar o programa? (s/n): ")
                     while continuarProg != 'S' and continuarProg != 's' and continuarProg != 'n' and continuarProg != 'N':
-                        continuarProg = input("\n necessario que digite 's' ou 'n': ")
+                        continuarProg = input("\nÉ necessario que digite 's' ou 'n': ")
 
                     # Caso o programa não deva continuar
                     if continuarProg == 'n' or continuarProg == 'N':
@@ -266,8 +271,6 @@ if continuarProg:
     # Imprimindo os resultados na tela
     j = 1
 
-    #if len(myresult) > 500:
-        #input(f"\nFoi encontrado {len(myresult)} resultados. É resultado pra caral%@ vai com calma ai.")
     if len(myresult) > 50:
         input(f"\nFoi encontrado {len(myresult)} resultados. São muitos resultados, talvez alguns resultados de sua pesquisa não apareçam na tela.")
     else:

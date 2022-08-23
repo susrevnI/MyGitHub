@@ -9,49 +9,38 @@ mydb = mysql.connector.connect(
 
 mycursor = mydb.cursor()
 
-mycursor.execute(f"SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_SCHEMA = 'northwind'")
+def selecionar(tipoBusca, tabelaEsc):
+    if tipoBusca == "tabela":
+        mycursor.execute(f"SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_SCHEMA = 'northwind'")
+    else:
+        mycursor.execute(f"SELECT column_name FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_NAME = '{tabelaEsc}' and table_schema = 'northwind';")
+    
+    myresult = mycursor.fetchall()
 
-myresult = mycursor.fetchall()
+    enumerar = 1
 
-enumerar = 1
+    for elemento in myresult:
+        print(f"{enumerar} - {elemento[0]}")
+        enumerar += 1
 
-for elemento in myresult:
-    print(f"{enumerar} - {elemento[0]}")
-    enumerar += 1
+    tabColEsc = input(f"\nDigite o numero da {tipoBusca} a fazer a procura: ")
 
-tabelaEsc = input("\nDigite eo numero da tabela a fazer a procura: ")
+    procurar = 1
 
-procurar = 1
+    for elemento in myresult:
+        if tabColEsc == str(procurar):
+            tabColEsc = elemento[0]
+            return tabColEsc
+        procurar += 1
 
-for elemento in myresult:
-    if tabelaEsc == str(procurar):
-        tabelaEsc = elemento[0]
-        break
-    procurar += 1
 
-mycursor.execute(f"SELECT column_name FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_NAME = '{tabelaEsc}' and table_schema = 'northwind';")
+tabelaEsc = selecionar("tabela", "Vazio")
 
-myresult = mycursor.fetchall()
-
-enumerar = 1
-
-for elemento in myresult:
-    print(f"{enumerar} - {elemento[0]}")
-    enumerar += 1
-
-colunaEsc = input("\nDigite o numero da coluna a fazer a procura: ")
-
-procurar = 1
-
-for elemento in myresult:
-    if colunaEsc == str(procurar):
-        colunaEsc = elemento[0]
-        break
-    procurar += 1
+colunaEsc = selecionar("coluna", tabelaEsc)
 
 busca = input(f"\nO que deseja procurar em '{colunaEsc}': ")
 
-mycursor.execute(f"select * from {tabelaEsc} where {colunaEsc} = '{busca}'")
+mycursor.execute(f"select * from `{tabelaEsc}` where `{colunaEsc}` like '{busca}'")
 
 myresult = mycursor.fetchall()
 
