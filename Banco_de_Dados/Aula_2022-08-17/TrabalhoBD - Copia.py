@@ -82,7 +82,8 @@ Olá,
         do mês de Abril.
   6 - No caso de pesquisar apenas uma letra de uma palavra, deve-se digitar % por fora da
         palavra como no exemplo: %a% retorna qualquer palavra com a letra 'a'. a% retorna
-        todas as palavras com a letra inicial 'a'.
+        todas as palavras com a letra inicial 'a'. %a retorna todas as palavras que 
+        terminem em 'a'.
   6 - Caso os resultado sejam muito grandes não será possivel mostrar tudo na tela de uma 
         só vez, será mostrado 50 a cada vez que pressionar o botão Enter.
 """)
