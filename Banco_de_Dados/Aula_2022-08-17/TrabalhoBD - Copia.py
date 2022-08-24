@@ -68,7 +68,7 @@ Olá,
  Esse programa faz uma busca no banco de dados NorthWind aonde você escolhe as tabelas 
  as colunas e o que procurar em determinada coluna. 
  
- Aqui vai uma breve esplicação de como o programa funciona:
+ Aqui vai uma breve explicação de como o programa funciona:
  
   1 - É obrigatorio escolher uma tabela para iniciar a busca.
   2 - Caso não seja especificado uma coluna será mostrado tudo de todas as colunas.
@@ -80,8 +80,11 @@ Olá,
     5.2 - No caso de busca apenas por ano, mês ou dia pode-se trocar o número da data pelo
         simbolo de porcentagem (%) assim como no exemplo: '%-04-%', retorna todos os dados
         do mês de Abril.
-  6 - Caso os resultado sejão muito grandes não será possivel mostrar tudo na tela de uma 
-        só vez, será mostrado 50 a cada vez que precionar o botão Enter.
+  6 - No caso de pesquisar apenas uma letra de uma palavra, deve-se digitar % por fora da
+        palavra como no exemplo: %a% retorna qualquer palavra com a letra 'a'. a% retorna
+        todas as palavras com a letra inicial 'a'.
+  6 - Caso os resultado sejam muito grandes não será possivel mostrar tudo na tela de uma 
+        só vez, será mostrado 50 a cada vez que pressionar o botão Enter.
 """)
 
 
@@ -169,7 +172,7 @@ if mostrarColuna == 's' or mostrarColuna == 'S':
 
         for elemento in colunas:
             if elemento[0] == qualColuna or qualColuna == str(l):
-                listaColunas.append(elemento[0])
+                listaColunas.append(elemento)
                 sim = True
                 break
             else:
@@ -209,10 +212,10 @@ if colunaEsc != '':
             o = 1
             for elemento in listaColunas:
                 if k != o:
-                    select += f"`{elemento}`, "
+                    select += f"`{elemento[0]}`, "
                     o += 1
                 else:
-                    select += f"`{elemento}`"
+                    select += f"`{elemento[0]}`"
 
         
         # Realizando e armazenando a busca com base na coluna se for escolhida
@@ -296,7 +299,7 @@ if continuarProg:
         i = 0
         print(f"\nLinha de resutados número: {j}")
         for elemento2 in elemento:
-            print(f"  {listaColunas[i]} = {elemento2}")
+            print(f"  {listaColunas[i][0]} = {elemento2}")
             i += 1
         if j % 50 == 0:
             input()
