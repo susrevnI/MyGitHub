@@ -137,6 +137,8 @@ mostrarColuna = input("Deseja mostrar colunas especificas? (s/n): ")
 
 while mostrarColuna != 'S' and mostrarColuna != 's' and mostrarColuna != 'n' and mostrarColuna != 'N':
     mostrarColuna = input("É necessario que digite 's' ou 'n': ")
+# while mostrarColuna not in ['S', 's', 'N', 'n']:
+#     mostrarColuna = input("É necessario que digite 's' ou 'n': ")
 
 
 # Para mostrar colunas expecificas
@@ -144,17 +146,23 @@ if mostrarColuna == 's' or mostrarColuna == 'S':
     print("\nDigite 'Sair' para sair.")
     listaColunas = list()
     
-
+    # Perguntando a coluna
     qualColuna = input("\nDigite o nome ou número da coluna: ")
     qualColuna.strip()
 
+    # Para verificando saida
     while True:
+
+        # Caso tenha elementos na lista
         if (qualColuna == "Sair" or qualColuna == "sair") and len(listaColunas) != 0:
             break
+
+        #Caso não tenha elementos na lista
         elif (qualColuna == "Sair" or qualColuna == "sair") and len(listaColunas) == 0:
             mostrarColuna = 'n'
             break
             
+        # Verificando se a coluna existe e adicionando na lista de colunas
         l = 1
 
         for elemento in colunas:
@@ -166,9 +174,12 @@ if mostrarColuna == 's' or mostrarColuna == 'S':
                 sim = False
             l += 1
             
+        # Coluna não encontrada
         if not sim:
             qualColuna = input("Coluna não encontrada, digite novamente: ")
             qualColuna.strip()
+
+        # Proxima coluna
         else:
             qualColuna = input("Digite o nome ou número da proxima coluna: ")
             qualColuna.strip()
@@ -214,7 +225,7 @@ if colunaEsc != '':
 
             # Verificar se deve continuar a procura por colunas
             if continuarCol == 's' or continuarCol == 'S':
-                procura = input(f"\nDigite o/a '{colunaEsc}': ")
+                procura = input(f"\nDigite o que deseja pesquisar na coluna '{colunaEsc}': ")
                 procura = procura.strip()
         
 
