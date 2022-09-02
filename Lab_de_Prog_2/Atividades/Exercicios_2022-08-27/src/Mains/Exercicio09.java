@@ -25,7 +25,7 @@ public class Exercicio09 {
         System.out.print("\nDigite o valor do dólar atualmente: ");
         double dolarAtual = scan.nextDouble();
 
-        System.out.print("Digite o valor total em dólares: ");
+        System.out.print("Digite o valor total em dólares que deseja comprar: ");
         double totalDolares = scan.nextDouble();
 
         double totalReais = ClasseEx09.dolarParaReal(dolarAtual, totalDolares);

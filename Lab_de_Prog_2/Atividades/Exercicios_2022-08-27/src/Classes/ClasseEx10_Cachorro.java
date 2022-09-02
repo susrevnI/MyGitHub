@@ -10,10 +10,11 @@ public class ClasseEx10_Cachorro extends ClasseEx10_Animal {
     }
 
     public void caminha() {
-        System.out.println("O cachorro está caminhando!!");
+        System.out.println(this.nome + " está caminhando!!");
     }
 
     public void late(){
         System.out.println("Au au au. (´w`)");
     }
+    
 }

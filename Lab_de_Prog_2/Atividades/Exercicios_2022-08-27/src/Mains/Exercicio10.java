@@ -52,7 +52,7 @@ public class Exercicio10 {
 
         System.out.println("\n  ---  |Olá usuário, bem-vindo ao Fofos HotelPet|  ----");
 
-        // Crindo  e outras variáveis
+        // Crindo opcao e outras variáveis
         double opcao = -1;
         double opcaoPet = -1;
         String nomePetIn;

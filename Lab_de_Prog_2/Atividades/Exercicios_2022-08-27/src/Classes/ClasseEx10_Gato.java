@@ -10,7 +10,7 @@ public class ClasseEx10_Gato extends ClasseEx10_Animal {
     }
 
     public void caminha() {
-        System.out.println("O Gato está caminhando!!");
+        System.out.println(this.nome + " está caminhando!!");
     }
 
     public void mia(){

@@ -22,7 +22,7 @@ public class ClasseEx08 {
     }
 
     public void AumentarSalario(double porcentagem) {
-        salarioBruto += salarioBruto / 100 * porcentagem;
+        salarioBruto += salarioBruto * porcentagem / 100;
         System.out.printf("\nDados atualizados: %s, R$ %.2f\n", nome, salarioBruto - imposto);
     }
 

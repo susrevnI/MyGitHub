@@ -5,10 +5,14 @@ package Classes;
  */
 public abstract class ClasseEx10_Animal {
 
-    String nome;
-    String raca;
+    protected String nome;
+    protected String raca;
 
     public ClasseEx10_Animal() {
+    }
+
+    public ClasseEx10_Animal(String nome) {
+        this.nome = nome;
     }
 
     public ClasseEx10_Animal(String nome, String raca) {
@@ -33,7 +37,5 @@ public abstract class ClasseEx10_Animal {
     public void setRaca(String raca) {
         this.raca = raca;
     }
-
-    
     
 }
