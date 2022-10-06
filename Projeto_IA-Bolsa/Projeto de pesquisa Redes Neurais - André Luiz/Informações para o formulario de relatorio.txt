@@ -1,0 +1,3 @@
+Curso: Técnico em Informática integrado ao Ensino médio
+
+Título: Modelos de redes neurais para classificação de peixes recifais do Atlântico e Pacífico Oriental 
